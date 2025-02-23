@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 2</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 2</small>
+			Exploratory Data Analysis
+		</h1>
+
+		<p>
+			<strong>Ian Lee</strong> — <em>ianl@mit.edu</em>
+		</p>
+	</header>
+	<main>
+		<section>
+			<h2>Subtheme: Speculation</h2>
+			<h3>Datasets</h3>
+			To understand speculators behaviors, I look into two datasets.
+			<ol>
+				<li>
+					<h4>Corporate Ownership Rates & Owner Occupancy in Boston, 2004-2024</h4>
+					<p>
+						This dataset shows the evolution of ownership occupancy patterns and corporate presence across 21 Greater Boston neighborhoods over a 21-year period from 2004 to 2024. It combines two types of information for each neighborhood and year: (1) Owner occupancy rates: The proportion of property owners who live in their properties. (2) Corporate ownership rates: The percentage of properties owned by corporations. This dataset is sourced from the City of Boston property assessment records. The only data transformation done is the presentation of owner occupancy and corporate ownership each as a rate instead of concrete numbers. I’m interested in this data because this dataset covers not only absentee owners (my main subject of interest) as well as corporate ownership in each neighborhood, painting a more nuanced picture of the interplay between the two factors.
+					</p>
+				</li>
+
+				<li>
+					<h4>Residential Sales Data in Boston, 2000-2023</h4>
+					<p>
+						This dataset traces the residential trasanctions from 2000-2023 across neighborhoods, the type of housing, the precise address, the price, housing style, age, mortgage amount, space composition (nbr. bathrooms, bedrooms), property size, and if the sales is considered a flip: the flip horizon, flip type, and investor type. Data fields such as amentities are letter-coded to indicate which type of convenience is supplied for the property residents, as well as boolean indicators showing if a sale is from an investor to another.
+					</p>
+				</li>
+			</ol>
+
+			<h3>Overall Analysis Questions</h3>
+			<ol>
+				<li>Which neighborhoods have the highest absentee buyer presence?</li>
+				<li>Do flippers often depend on mortgage to make speculative purchases?</li>
+				<li>Are there more non-flip sales than flip sales? Is that true across history?</li>
+			</ol>
+
+			<h3>Motivations</h3>
+			I asked about
+			<ul>
+				<li>Q1 because I personally have family and friends living in South End and Allston. I want to know if the neighborhoods they live in are full of resident- vs absentee buyers.</li>
+				<li>Q2 and Q3 are because I am interested in how spectulative investors (flippers) make their purchases and if the volume of flip .</li>
+			</ul>
+		</section>
+
+		<section>
+			<h2>Discoveries & Insights</h2>
+
+			<figure style="max-width: 100%; overflow-x: auto; white-space: nowrap;">
+				<img src="assets/Sheet 1.png" alt="" width="2000px"/>
+				<figcaption>
+					<b>Boston Neighborhoods Absentees Ownership Rate</b>
+					<div>This shows the absentee ownership rate across 21 Boston neighborhoods.</div>
+				<div>
+					On the x-axis, we have years spanning 2004 to 2024.
+				</div>
+				<div>
+					On the y-axis, we have the absentee rate, which I get by transforming the data and
+					<div>computing the complement of owner occupancy rate, and showing it  as a percentage.</div>
+				</div>
+				<div>
+					There are several profound observations:
+					<br></br>
+					<div>(1) Across the two decades, the absentee rate is always above ~33% acorss neighborhoods. </div>
+					<div>This is a surprising observation because often we hear "there is not enough housing supply",</div>
+					<div>when in reality, consistently across the years we see <b>at least a third of housings are not occupied</b> in both</div>
+					<div>traditionally rich neighborhoods like Beacon Hill and less rich neighborhoods like Mattapan, (speaking as a Boston native).</div>
+				
+					<br>
+					<div>
+						(2) To answer the analysis question Q1 on which neighborhoods have the highest absentee buyer presence, 
+						<div>we scan the graph horizontally and note that Allston, Fenway, Longwood are among the highest!</div>
+						<div>In fact, in 2024, the absentee rates are respectively: </div>
+						<div>Allston (78%), Fenway (84%), Longwood (82%)</div>
+						<div>which is mind-blowing because how?</div>
+						<br>
+						<div><b>A possible explanation is access to quality education</b>: Boston Latin School is a well-known public school at Longwood/Fenway that only accepts students with an address in Boston.</div>
+						<div>The high absentee rate might be a result of parents intending to send their kids to the school while living in the comfort of near downtown Boston/Back Bay/financial districts.</div>
+						<div>Or the result of flippers buying with the expectation that parents desire these area and hence purchased properties in these area for spectulative gain. </div>
+					</div>
+				</div>
+				</figcaption>
+			</figure>
+
+			<figure style="max-width: 100%; overflow-x: auto; white-space: nowrap;">
+				<img src="assets/Sheet 2.png" alt="" width="1200px" />
+				<figcaption> <b>Max Corporate Ownership Rate</b>
+				This shows the max corporate ownership rate from 2004-2024 across 21 Boston neighborhoods.
+				<div>
+					On the x-axis, we have max corporate ownership rate as percentage.
+				</div>
+				<div>
+					On the y-axis, we have the neighborhoods, alphabetically sorted.
+				</div>
+				<br>
+				The reasoning behind choosing the maximum across the years, instead of average or minimum is that 
+				<div>we tend to operate on the assumption that corporate is increasing owning land in the community (this is based on</div>
+				opinions like "Sell your house to a person not a corporation" on social forums).
+				
+				<div>
+					Hence, to better align
+					and extract more value from the data, I choose to represent the max and compare the maximums across neighborhoods.	
+				</div>
+				<br>
+				<div>
+					We observe that South Boston Waterfront (seaport district), then Fenway, then Downtown have the highest corporate ownership rate,
+					<div>with seaport <b>at over 40%  corporate neighborhood ownership rate</b> Note these areas are all work-centers:  Downtown is the city center, Seaport is a financial district, and Fenway is close to hospitals and medical school. </div>
+					<div>This implies that corporate tend to desire high residential ownership rate in work-centers to rent to office workers, possibly due to their consistent wage and tendency to value housing that cuts commute time more.
+				</div>
+				</figcaption>
+			</figure>
+
+			<figure style="max-width: 100%; overflow-x: auto; white-space: nowrap;">
+				<img src="assets/Sheet 3.png" alt="" width="800px" />
+				<figcaption>
+				<b>Average Buyer Percent Paid in Mortgage (Non-Flippers vs. Flippers)</b>
+				<div>
+					This shows the percentage of the purchase paid in mortgage for each type of investor.
+					<div>
+						It is amazing to see that for non-flippers, even for <b>institutional, large</b> investors <b>(70% for large investors, non-flippers)</b>, 
+						<div>leverage on mortgage to make a purchase, perhaps due to the fact they can negotiate</div>
+						<div>a low rate.
+					 In general, <b>around at least half</b> of all types of non-flippers leverage mortgage instead of all-cash.</div>
+					<br>
+					<div>For flippers, the difference is drastic. <b>institutional and medium investors are significant players in the all-cash real estate market</b>.</div>
+					<div>Essentially, mortgage is still a relatively important leverage to get a property for flipping for small, non-value investors, but not so much for larger sized investors.</div>
+					<br>
+					<div>So, to answer our Q2 about whether flippers often depend on mortgage to "make the flip", the answer is generally no, flippers tend to pay all-cash (even for small flippers, 55% go all-cash). </div>
+					<div>However, the extent to which mortgage is used depends on the scale of the investor. For retail, smaller-sized investors, mortgage remains an important method to purchase a property.</div>
+					<div>But, for bigger investors, the difference is night-and-day, and they leverage all-cash much more often.</div>
+					<div>I believe this presents an unfair advantage for large investors as all-cash buy offer is much more attractive for a seller.</div>
+					<div><b>This is a reflection that our society gives unproportional leverage </b>to more well-equipped spectulators which can easily use the scale of their capital to expand and acquire housing disproportionally in our neighborhoods,</div>
+					<div>whereas the everyday American usually needs to through hoops and processes with the bank to purchase what for most their first and only home of their life.</div>
+				</figcaption>
+			</figure>
+
+			<figure style="max-width: 100%; overflow-x: auto; white-space: nowrap;">
+				<img src="assets/Sheet 4.png" alt="" width="800px" />
+				<figcaption>
+					<b>Number of Non-Flip vs. Flip Residential Sales in Boston 2000-2023</b>
+					<div>This shows the amount of non-flip, buy-to-use housing vs. flip sales in Boston.</div>
+					<div>The x-axis shows the years. The two y-axses show are <b>transformed</b> to use the same scale to allow for comparison of the two measures.</div>
+					<div>There are two interesting observations</div>
+
+					<br>
+					<div>
+						(1) There are <b>signficantly more non-flip, traditional buy-to-use residential sales</b> than flip sales.
+						<div>For example, in 2022, there are ~1.9k non-flip: ~100 flip residential sales, implying <b>only 5.7% of sales are for flipping that year</b></div>
+						<div>This aligns with my expectations that the market is not dominated by flippers, which would be hugely unsustainable because excessive flipping activity is opportunistic in a way that harms people's livelihood.</div>
+			
+						<br>
+						(2)  Flip sales in Boston surged at year 2010. 40x-fold increase in a year.
+						<div>A possible explanation is the relaxed mortgage rate due to post-2008 economic recovery.</div>
+						<br>
+
+						<div>To answer oru Q3, yes, there are <b>signficantly more non-flip residential sales</b> than flip sales, and it is true across history.</div>
+					</div>
+					<div><b>Follow-up question:</b> Now that we know about the amount and scale of flip sales in Boston, what about the duration of how fippers usually hold their property before they are resold?</div>
+				</figcaption>
+			</figure>
+
+
+			<figure style="max-width: 100%; overflow-x: auto; white-space: nowrap;">
+				<img src="assets/Sheet 5.png" alt="" width="55%" />
+				<figcaption>
+				<b>Hold Horizon for Flip Properties in Boston</b>
+				<div>This shows the hold time horizon (the actual number and proportions) of flipper properties in Boston.</div>
+				<div>This includes short-term (less than half a year), medium-term (half to 1 year), and long (1-2 years) term flips.</div>
+				<div>Visualizing this is helpful because it answers <b>our follow up question</b> about</div>
+				<div>how long do flippers usually hold their property before they are resold.</div>
+				<div>As the data shows, majority of flip properties are held long-term, then medium, then short.</div>
+				<div>This indicates that housing is a relatively fixed asset that is not as liquid as, e.g. stocks, which we can buy and sell immediately. </div>
+				<div>A possible explanation for why hold horizon tends to be in months instead of say days or weeks</div>
+				<div>is the logisitical barriers when it comes to acquiring and reselling a house, including legal documents paperwork and long-term capital gain</div>
+				</figcaption>
+			</figure>
+
+		</section>
+
+		<section>
+			<h2>Summary</h2>
+
+			<p>
+				In this research, I explored two datasets: the first contains the yearly owner occupancy and corporate ownership rates in Boston neighborhoods, the second contains residential sales across years in Boston neighborhoods,
+				with metadata of the sales, including whether the sale constitutes a flip, the flip horizon, as well as the investor behind the flip. There are several profound observations:
+				first, Allston, Fenway, Longwood are the neighborhoods with most absentee owners, possibly due to their proximity to education institutions such as Boston University, Boston Latin School, as well as Harvard and MIT.
+				secondly, absentee owners are way more common that I anticipated, reaching about 1 in 3 owners being an absentee owner, which is huge.
+				Then, in exploring corporate ownership, I realize corporate ownership rate vary widely across the Boston neighborhoods, but the max corporate ownership can reach over 40%, which 
+				indicates a huge problem. Is a neighborhood is mostly owned by corporations, is it really a community of people? This is relevant to the subtheme of speculation because it helps me understand which neighborhoods do corporate have a higher
+				stake in, for example Seaport district is relatively more corporate-owned. After these investigations, I look into residential sales and flippers, and I uncover there are signficantly more non-flippers than flippers,
+				and these spectulative investors tend to purchase by leveraging their ability to go all-cash, versus the route of borrow-work-pay-die that most people abide with due to a limitation of choices. Lastly, I look into
+				the holding horizon of flippers to gain better understanding of how they handle a buy-to-flip property, and I learned that surprisingly a majority of flip properties are held in the long-term (1-2 years), possibly due to
+				real estate being generally a capital-intensive activity and selling is logistically harder than say selling a stock.
+				
+			</p>
+			<p>From my exploration of the two relevant datasets, I gained a clearer understanding of how speculative investors (flippers) go about their flip, and especially the precise regions
+				which might have high buy-for-invest (not live) prescence (implied by the high absentee ownership rates). Overall, I learned a great amount from the data about my subtheme.</p>
+		</section>
+	</main>
+</body>
+</html>

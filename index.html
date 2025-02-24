@@ -74,31 +74,36 @@
 					<b>Boston Neighborhoods Absentees Ownership Rate</b>
 					<div>This shows the absentee ownership rate across 21 Boston neighborhoods.</div>
 				<div>
-					On the x-axis, we have years spanning 2004 to 2024.
+					On the x-axis, we have years spanning 2004 to 2024, covering 21 years (~2 decades).
 				</div>
 				<div>
 					On the y-axis, we have the absentee rate, which I get by transforming the data and
-					<div>computing the complement of owner occupancy rate, and showing it  as a percentage.</div>
+					<div>computing the complement of owner occupancy rate, and computing it as a percentage.</div>
 				</div>
+				<br>
 				<div>
 					There are several profound observations:
-					<br></br>
 					<div>(1) Across the two decades, the absentee rate is always above ~33% acorss neighborhoods. </div>
 					<div>This is a surprising observation because often we hear "there is not enough housing supply",</div>
 					<div>when in reality, consistently across the years we see <b>at least a third of housings are not occupied</b> in both</div>
 					<div>traditionally rich neighborhoods like Beacon Hill and less rich neighborhoods like Mattapan, (speaking as a Boston native).</div>
-				
+					<div>This is good to note because it seems like absentee ownership seems to be a prevalent phenomenon across neighborhoods.</div>
 					<br>
 					<div>
 						(2) To answer the analysis question Q1 on which neighborhoods have the highest absentee buyer presence, 
 						<div>we scan the graph horizontally and note that Allston, Fenway, Longwood are among the highest!</div>
-						<div>In fact, in 2024, the absentee rates are respectively: </div>
-						<div>Allston (78%), Fenway (84%), Longwood (82%)</div>
-						<div>which is mind-blowing because how?</div>
-						<br>
+						<div>In fact, in 2024, the absentee rates are respectively: Allston (78%), Fenway (84%), Longwood (82%), which is mind-blowing because <i>how</i>?</div> 
 						<div><b>A possible explanation is access to quality education</b>: Boston Latin School is a well-known public school at Longwood/Fenway that only accepts students with an address in Boston.</div>
 						<div>The high absentee rate might be a result of parents intending to send their kids to the school while living in the comfort of near downtown Boston/Back Bay/financial districts.</div>
 						<div>Or the result of flippers buying with the expectation that parents desire these area and hence purchased properties in these area for spectulative gain. </div>
+						<div>There are also good universities nearby, namely Boston University and Harvard/MIT which are in proximity of these neighborhoods.</div>
+						<div>The take-away I have from this analysis is absentee property units are quite common, and the neighborhoods with the highest absentees</div>
+						<div>happen to be in close proximity and ease of access to quality educational institutions.</div>
+
+						<br>
+						<div><b>A follow-up question</b> is <i>If absentee ownership is so common, what about corporate ownership?</i></div>
+						<b>In fact, an additional follow-up question</b> is <i>Do neighborhoods with high absentee owners tend to have high corporate ownership presence?</i>
+						<div>We will investigate these two questions in the following visualization:</div>
 					</div>
 				</div>
 				</figcaption>
@@ -107,27 +112,30 @@
 			<figure style="max-width: 100%; overflow-x: auto; white-space: nowrap;">
 				<img src="assets/Sheet 2.png" alt="" width="1200px" />
 				<figcaption> <b>Max Corporate Ownership Rate</b>
-				This shows the max corporate ownership rate from 2004-2024 across 21 Boston neighborhoods.
+				This shows the max corporate ownership rate over the 21 years (2004-2024) for each Boston neighborhood.
+				<div>After exploring the prevalence of absentee ownership, I want to investigate if there is a prevalence of corporate ownership in neighborhoods.</div>
 				<div>
 					On the x-axis, we have max corporate ownership rate as percentage.
-				</div>
-				<div>
 					On the y-axis, we have the neighborhoods, alphabetically sorted.
 				</div>
 				<br>
 				The reasoning behind choosing the maximum across the years, instead of average or minimum is that 
-				<div>we tend to operate on the assumption that corporate is increasing owning land in the community (this is based on</div>
-				opinions like "Sell your house to a person not a corporation" on social forums).
-				
+				we tend to operate on the assumption that <div>corporate is increasing owning land in the community. (this is based on
+					opinions like "Sell your house to a person not a corporation" on social forums).</div>
 				<div>
-					Hence, to better align
-					and extract more value from the data, I choose to represent the max and compare the maximums across neighborhoods.	
+					Hence, to better align and extract more value from the data, I choose to represent the max and compare the maximums across neighborhoods.	
 				</div>
 				<br>
 				<div>
 					We observe that South Boston Waterfront (seaport district), then Fenway, then Downtown have the highest corporate ownership rate,
 					<div>with seaport <b>at over 40%  corporate neighborhood ownership rate</b> Note these areas are all work-centers:  Downtown is the city center, Seaport is a financial district, and Fenway is close to hospitals and medical school. </div>
 					<div>This implies that corporate tend to desire high residential ownership rate in work-centers to rent to office workers, possibly due to their consistent wage and tendency to value housing that cuts commute time more.
+						<div>In general, most neighborhoods have a decent amount of corporate ownership. Even the lowest (Hyde Park) have <b>12% corporate ownership</b></div>.
+					<div>To answer the additional follow-up question I had about: Yes, I observe a correlation between neighborhoods with high absentee owners with high corporate ownership presence.</div>
+					<div>For instances, Allston (78% absentee owners, ~30% corporate ownership), Longwood (82% absentee owners, ~34% corporate ownership), and Fenway (84% absentee owners, 36% corporate ownership).</div>
+					<div>A cool correlation is that the neighborhoods with higher absentee owners tend to have more corporate ownership presence (based on these three datapoints and more).</div>
+					<div>This potentially implies that high corporate ownership of a community drives up the number of units where the owners don't occupy what they own.</div>
+					<div>And this might explain why tenant rights become an increasing issue (as mentioned in subtheme readings like ProPublica). If you as the owner don't live in where you own and treat your property simply as a business and not a home that people live in, how do we expect you to treat your tenants well and with respect?</div>
 				</div>
 				</figcaption>
 			</figure>
@@ -137,19 +145,19 @@
 				<figcaption>
 				<b>Average Buyer Percent Paid in Mortgage (Non-Flippers vs. Flippers)</b>
 				<div>
+					<div>The data is from the residential sales dataset and this visualization aims to show the prevalence of the use of mortgage in buyers (non-flip/flippers)</div>
 					This shows the percentage of the purchase paid in mortgage for each type of investor.
 					<div>
 						It is amazing to see that for non-flippers, even for <b>institutional, large</b> investors <b>(70% for large investors, non-flippers)</b>, 
-						<div>leverage on mortgage to make a purchase, perhaps due to the fact they can negotiate</div>
-						<div>a low rate.
+						<div>leverage on mortgage to make a purchase, perhaps due to the fact they can negotiate a low rate.</div>
 					 In general, <b>around at least half</b> of all types of non-flippers leverage mortgage instead of all-cash.</div>
 					<br>
 					<div>For flippers, the difference is drastic. <b>institutional and medium investors are significant players in the all-cash real estate market</b>.</div>
 					<div>Essentially, mortgage is still a relatively important leverage to get a property for flipping for small, non-value investors, but not so much for larger sized investors.</div>
-					<br>
 					<div>So, to answer our Q2 about whether flippers often depend on mortgage to "make the flip", the answer is generally no, flippers tend to pay all-cash (even for small flippers, 55% go all-cash). </div>
 					<div>However, the extent to which mortgage is used depends on the scale of the investor. For retail, smaller-sized investors, mortgage remains an important method to purchase a property.</div>
 					<div>But, for bigger investors, the difference is night-and-day, and they leverage all-cash much more often.</div>
+					<br>
 					<div>I believe this presents an unfair advantage for large investors as all-cash buy offer is much more attractive for a seller.</div>
 					<div><b>This is a reflection that our society gives unproportional leverage </b>to more well-equipped spectulators which can easily use the scale of their capital to expand and acquire housing disproportionally in our neighborhoods,</div>
 					<div>whereas the everyday American usually needs to through hoops and processes with the bank to purchase what for most their first and only home of their life.</div>

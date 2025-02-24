@@ -34,6 +34,14 @@
 					<p>
 						This dataset traces the residential trasanctions from 2000-2023 across neighborhoods, the type of housing, the precise address, the price, housing style, age, mortgage amount, space composition (nbr. bathrooms, bedrooms), property size, and if the sales is considered a flip: the flip horizon, flip type, and investor type. Data fields such as amentities are letter-coded to indicate which type of convenience is supplied for the property residents, as well as boolean indicators showing if a sale is from an investor to another.
 					</p>
+					<p>
+						In terms of dataset profiling and data quality, there are 49,301 entries, each corresponding to a distinct residential property sale,
+						where a property (R1F, single family residence) can be a standalone house or an apartment/condo unit (APT, CNR), etc. There are a bit of 
+						overlap in data. For example, the street field overlaps with address. And auxiliary data fields like lat, lon help pinpoint the location on a map.
+						Then, when it comes to flip, it was not explicitly stated what time unit of the field <b>flip_horizon</b>  is in (days? weeks?) as the metadata doesn't clarify that, 
+						though it later becomes clear that <b>flip_horizon</b> is in days based on inferring from the field <b>month_horizon</b>, which expresses time horizon in months. Overall, there is a collection of boolean indicators,
+						floats, strings, geographical coordinates that make this a rich and comprehensive dataset.
+					</p>
 				</li>
 			</ol>
 
@@ -47,8 +55,13 @@
 			<h3>Motivations</h3>
 			I asked about
 			<ul>
-				<li>Q1 because I personally have family and friends living in South End and Allston. I want to know if the neighborhoods they live in are full of resident- vs absentee buyers.</li>
+				<li>Q1 because I personally have family and friends living in South End and Allston. As a Boston native, I am really curious just how "absent" Boston neighborhoods are. Especially those where my relatives live in.</li>
 				<li>Q2 and Q3 are because I am interested in how spectulative investors (flippers) make their purchases and whether flipping is prevalent or not.</li>
+				<p>
+					I want to quote the subtheme's readings: Homes For Profit (MAPC) <a href="https://homesforprofit.mapc.org/report">Large and institutional investors were the most likely to flip the homes they purchased.</a>
+					as a prime motivation for these questions, especially question 2. I want to understand exactly the method of which flippers tend to flip (all-cash? mortgage?)
+					and how prevalent is flipping of Boston residential properties.
+				</p>
 			</ul>
 		</section>
 
